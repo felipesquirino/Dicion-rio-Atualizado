@@ -22,46 +22,47 @@
       -webkit-overflow-scrolling: touch;
       height: 100vh;
       width: 100vw;
-      padding: 20px;
-      gap: 20px;
-      flex-wrap: nowrap; /* evita quebra de linha */
-      scroll-padding: 20px; /* espaço na borda para snap */
+      gap: 0;
+      scroll-padding: 0;
+      flex-wrap: nowrap;
+      scroll-behavior: smooth;
     }
     .card {
       position: relative;
       flex: none;
-      width: 320px;
-      height: 420px;
+      width: 100vw;
+      height: 100vh;
       scroll-snap-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
       color: #222;
       text-align: center;
-      border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      overflow: hidden;
+      /* Removi border-radius e sombra para ocupar toda a tela */
       background-color: rgba(255, 255, 255, 0.85);
-      user-select: none; /* evita seleção ao deslizar */
+      overflow: hidden;
+      user-select: none;
+      padding: 40px;
     }
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
       background: url('https://i.imgur.com/VsCPlwK.jpeg') no-repeat center center/cover;
-      opacity: 0.25; /* Fundo mais vivo */
+      opacity: 0.25;
       z-index: 0;
       pointer-events: none;
       filter: brightness(1.1);
       transition: opacity 0.3s ease;
     }
     .card:hover::before {
-      opacity: 0.4; /* destaque no hover */
+      opacity: 0.4;
     }
     .content {
       position: relative;
       z-index: 1;
-      padding: 30px 25px;
+      max-width: 320px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -87,15 +88,10 @@
       color: #d6336c;
       text-shadow: 2px 2px 6px rgba(214, 51, 108, 0.7);
       margin-top: auto;
-      /* linha separada, centralizada */
     }
 
     /* Responsivo para telas menores */
     @media (max-width: 360px) {
-      .card {
-        width: 280px;
-        height: 380px;
-      }
       .content h1 {
         font-size: 2em;
       }
