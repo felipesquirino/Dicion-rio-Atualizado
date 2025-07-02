@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Liora Eduarda - Definições</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      background: #fff;
+    }
+    .container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      height: 100vh;
+      width: 100vw;
+      padding: 20px;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      position: relative;
+      flex: none;
+      width: 320px;
+      height: 420px;
+      scroll-snap-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #222;
+      text-align: center;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://i.imgur.com/VsCPlwK.jpeg') no-repeat center center/cover;
+      opacity: 0.25; /* Fundo mais vivo */
+      z-index: 0;
+      pointer-events: none;
+      filter: brightness(1.1);
+      transition: opacity 0.3s ease;
+    }
+    .card:hover::before {
+      opacity: 0.4; /* Ao passar o mouse, destaca mais (desktop) */
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .content h1 {
+      font-size: 2.5em;
+      color: #d6336c;
+      margin-bottom: 0.8em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    .content p {
+      font-size: 1.3em;
+      line-height: 1.5;
+      color: #2a2a2a;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+      margin-bottom: 1em;
+    }
+    .content .liora-name {
+      font-weight: 900;
+      font-size: 1.5em;
+      color: #d6336c;
+      text-shadow: 2px 2px 6px rgba(214, 51, 108, 0.7);
+      margin-top: auto;
+      /* linha separada, centralizada */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card"><div class="content">
+      <h1>Perfeição</h1>
+      <p>Estado de tudo que é completo e encantador.</p>
+      <div class="liora-name">Liora Eduarda</div>
+    </div></div>
+
+    <div class="card"><div class="content">
+      <h1>Cabelo</h1>
+      <p>Fios que brilham como o sol e definem o charme.</p>
+      <div class="liora-name">Liora Eduarda</div>
+    </div></div>
+
+    <div class="card"><div class="content">
+      <h1>Olhos</h1>
+      <p>Espelhos da alma que hipnotizam.</p>
+      <div class="liora-name">Liora Eduarda</div>
+    </div></div>
+
+    <div class="card"><div class="content">
+      <h1>Boca</h1>
+      <p>Onde nascem os sorrisos mais doces — pura poesia.</p>
+      <div class="liora-name">Liora Eduarda</div>
+    </div></div>
+
+    <div class="card"><div class="content">
+      <h1>Nariz</h1>
+      <p>Delicado e perfeito, como tudo em:</p>
+      <div class="liora-name">Liora Eduarda</div>
+    </div></div>
+
+    <div class="card"><div class="content">
+      <h1>Corpo</h1>
+      <p>Forma que traduz harmonia, beleza e leveza.</p>
+      <div class="liora-name">Liora Eduarda</div>
+    </div></div>
+  </div>
+</body>
+</html>
