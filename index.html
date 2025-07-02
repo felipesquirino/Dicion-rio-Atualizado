@@ -22,14 +22,14 @@
       -webkit-overflow-scrolling: touch;
       height: 100vh;
       width: 100vw;
-      padding: 20px 0; /* só vertical */
+      padding: 20px 0;
       gap: 20px;
       flex-wrap: nowrap;
-      scroll-padding: calc((100vw - 320px) / 2); /* centraliza o card */
+      scroll-padding: calc((100vw - 320px) / 2);
     }
     .card {
       position: relative;
-      flex: 0 0 320px; /* fixa largura */
+      flex: 0 0 320px;
       height: 420px;
       scroll-snap-align: center;
       display: flex;
@@ -88,21 +88,6 @@
       margin-top: auto;
     }
 
-    /* Texto “Arraste pro Lado” fixo */
-    .drag-hint {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(214, 51, 108, 0.8);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-size: 0.9em;
-      font-weight: 600;
-      user-select: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-
     /* Responsivo para telas menores */
     @media (max-width: 360px) {
       .card {
@@ -159,7 +144,5 @@
       <div class="liora-name">Liora Eduarda</div>
     </div></div>
   </div>
-
-  <div class="drag-hint">Arraste pro Lado</div>
 </body>
 </html>
