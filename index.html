@@ -12,94 +12,75 @@
     body, html {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
+      overflow: hidden;
       background: #fff;
     }
     .container {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
       height: 100vh;
       width: 100vw;
-      gap: 0;
-      scroll-padding: 0;
-      flex-wrap: nowrap;
-      scroll-behavior: smooth;
+      overflow: hidden;
     }
     .card {
-      position: relative;
-      flex: none;
-      width: 100vw;
-      height: 100vh;
-      scroll-snap-align: center;
+      flex: 1;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #222;
-      text-align: center;
-      /* Removi border-radius e sombra para ocupar toda a tela */
-      background-color: rgba(255, 255, 255, 0.85);
-      overflow: hidden;
-      user-select: none;
-      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      position: relative;
+      padding: 20px;
     }
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
       background: url('https://i.imgur.com/VsCPlwK.jpeg') no-repeat center center/cover;
-      opacity: 0.25;
+      opacity: 0.2;
       z-index: 0;
-      pointer-events: none;
       filter: brightness(1.1);
-      transition: opacity 0.3s ease;
-    }
-    .card:hover::before {
-      opacity: 0.4;
     }
     .content {
       position: relative;
       z-index: 1;
-      max-width: 320px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+      max-width: 300px;
+      text-align: center;
     }
     .content h1 {
-      font-size: 2.5em;
+      font-size: 1.8em;
       color: #d6336c;
-      margin-bottom: 0.8em;
+      margin-bottom: 0.5em;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
     .content p {
-      font-size: 1.3em;
-      line-height: 1.5;
+      font-size: 1.2em;
+      line-height: 1.6;
       color: #2a2a2a;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
       margin-bottom: 1em;
     }
     .content .liora-name {
       font-weight: 900;
-      font-size: 1.5em;
+      font-size: 1.4em;
       color: #d6336c;
       text-shadow: 2px 2px 6px rgba(214, 51, 108, 0.7);
-      margin-top: auto;
     }
 
-    /* Responsivo para telas menores */
-    @media (max-width: 360px) {
+    /* Torna cada card igual em largura e divide a tela igualmente */
+    .container > .card {
+      width: calc(100vw / 6); /* 6 cartões */
+    }
+
+    /* Responsivo para telas pequenas */
+    @media (max-width: 768px) {
       .content h1 {
-        font-size: 2em;
+        font-size: 1.2em;
       }
       .content p {
-        font-size: 1.1em;
+        font-size: 1em;
       }
       .content .liora-name {
-        font-size: 1.3em;
+        font-size: 1.1em;
       }
     }
   </style>
@@ -108,37 +89,37 @@
   <div class="container">
     <div class="card"><div class="content">
       <h1>Perfeição</h1>
-      <p>Estado de tudo que é completo e encantador.</p>
+      <p>É quando cada detalhe encanta e tudo faz sentido.</p>
       <div class="liora-name">Liora Eduarda</div>
     </div></div>
 
     <div class="card"><div class="content">
       <h1>Cabelo</h1>
-      <p>Fios que brilham como o sol e definem o charme.</p>
+      <p>Fios dourados que dançam com o vento e brilham ao sol.</p>
       <div class="liora-name">Liora Eduarda</div>
     </div></div>
 
     <div class="card"><div class="content">
       <h1>Olhos</h1>
-      <p>Espelhos da alma que hipnotizam.</p>
+      <p>Janelas mágicas que revelam mundos e encantam sem esforço.</p>
       <div class="liora-name">Liora Eduarda</div>
     </div></div>
 
     <div class="card"><div class="content">
       <h1>Boca</h1>
-      <p>Onde nascem os sorrisos mais doces — pura poesia.</p>
+      <p>Lugar onde nascem os sorrisos que iluminam qualquer dia.</p>
       <div class="liora-name">Liora Eduarda</div>
     </div></div>
 
     <div class="card"><div class="content">
       <h1>Nariz</h1>
-      <p>Delicado e perfeito, como tudo em:</p>
+      <p>Pequeno, delicado e perfeitamente posicionado na harmonia do rosto.</p>
       <div class="liora-name">Liora Eduarda</div>
     </div></div>
 
     <div class="card"><div class="content">
       <h1>Corpo</h1>
-      <p>Forma que traduz harmonia, beleza e leveza.</p>
+      <p>Forma que expressa graça, leveza e beleza em cada gesto.</p>
       <div class="liora-name">Liora Eduarda</div>
     </div></div>
   </div>
